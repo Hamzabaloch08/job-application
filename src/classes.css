@@ -59,6 +59,18 @@
   line-height: 2.5rem; /* 40px */
 }
 
+.text-purple {
+  color: #6851ff;
+}
+
+.text-purple-gradient {
+  background: linear-gradient(180deg, #4d3bdb 0%, #9747ff 100%);
+}
+
+.text-black {
+  color: #000000;
+}
+
 /* Gap Utilities */
 .gap-0 {
   gap: 0;
@@ -602,16 +614,4 @@
 }
 .uppercase {
   text-transform: uppercase;
-}
-
-.text-purple {
-  color: #6851ff;
-}
-
-.text-purple-gradient {
-  background: linear-gradient(180deg, #4d3bdb 0%, #9747ff 100%);
-}
-
-.text-black {
-  color: #000000;
 }
