@@ -554,8 +554,28 @@ video {
   display: none;
 }
 
+.fixed {
+  position: fixed;
+}
+
+.relative {
+  position: relative;
+}
+
+.inset-0 {
+  inset: 0px;
+}
+
+.z-40 {
+  z-index: 40;
+}
+
 .flex {
   display: flex;
+}
+
+.hidden {
+  display: none;
 }
 
 .h-9 {
@@ -566,8 +586,20 @@ video {
   width: 186.35px;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.resize {
+  resize: both;
+}
+
 .list-none {
   list-style-type: none;
+}
+
+.flex-row-reverse {
+  flex-direction: row-reverse;
 }
 
 .items-center {
@@ -582,6 +614,11 @@ video {
   gap: 1.25rem;
 }
 
+.bg-black {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
+}
+
 .px-\[100px\] {
   padding-left: 100px;
   padding-right: 100px;
@@ -590,6 +627,16 @@ video {
 .py-\[22px\] {
   padding-top: 22px;
   padding-bottom: 22px;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 .font-normal {
@@ -603,6 +650,10 @@ video {
 .text-\[\#6851ff\] {
   --tw-text-opacity: 1;
   color: rgb(104 81 255 / var(--tw-text-opacity, 1));
+}
+
+.opacity-50 {
+  opacity: 0.5;
 }
 
 body{
@@ -681,3 +732,126 @@ body{
   width: 0;
   height: 0;
 }
+
+/* Custom styles for the slide-in nav */
+
+#mobile-nav {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #fff;
+  transition: left 0.3s ease-in-out;
+  z-index: 50;
+}
+
+#mobile-nav.open {
+  left: 0;
+}
+
+#mobile-nav ul {
+  list-style-type: none;
+  padding: 20px;
+  margin: 0;
+}
+
+#mobile-nav ul li {
+  padding: 10px 0;
+  font-size: 18px;
+  color: #000;
+}
+
+#mobile-nav ul li:hover {
+  color: #6851ff;
+  /* Highlight menu items on hover */
+}
+
+#mobile-nav .btn-job-now {
+  background-color: #6851ff;
+  color: white;
+  padding: 10px 20px;
+  margin-top: 20px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 5px;
+  display: inline-block;
+  text-decoration: none;
+}
+
+#mobile-nav .btn-job-now:hover {
+  background-color: #5740d6;
+  /* Darker shade on hover */
+}
+
+#mobile-nav .logo {
+  width: 150px;
+  height: 30px;
+  margin: 20px 0;
+}
+
+/* Style for the overlay background */
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: opacity 0.3s ease-in-out;
+  z-index: 40;
+}
+
+#overlay.hidden {
+  display: none;
+  /* Hide overlay when not active */
+}
+
+.focus\:outline-none:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+@media not all and (min-width: 1024px) {
+  .max-lg\:h-\[30\] {
+    height: 30;
+  }
+
+  .max-lg\:w-10 {
+    width: 2.5rem;
+  }
+
+  .max-lg\:w-\[150px\] {
+    width: 150px;
+  }
+
+  .max-lg\:w-\[50\%\] {
+    width: 50%;
+  }
+
+  .max-lg\:gap-4 {
+    gap: 1rem;
+  }
+
+  .max-lg\:px-\[80px\] {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+
+  .max-lg\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .min-\[900px\]\:flex {
+    display: flex;
+  }
+
+  .min-\[900px\]\:hidden {
+    display: none;
+  }
+}
+

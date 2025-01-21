@@ -2,41 +2,86 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="icon" href="../assets/fav.icon.png" type="image/png">
+    <title>Hiring Mine</title>
     <link rel="stylesheet" href="input.css" />
+    <link rel="stylesheet" href="styles.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
-      rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    rel="stylesheet"
     />
   </head>
-  <body>
-    <header class="py-[22px] px-[100px]">
+  <body class="relative">
+    <!-- Overlay for dimming the background -->
+    <div id="overlay" class="hidden fixed inset-0 bg-black opacity-50 z-40"></div>
+
+    <!-- Header -->
+    <header class="py-[22px] px-[100px] max-lg:px-[80px]">
       <nav class="flex justify-between items-center">
+        <!-- Logo -->
         <img
-          class="text-logo w-[186.35px] h-9"
+          class="text-logo w-[186.35px] h-9 max-lg:w-[150px] max-lg:h-[30]"
           src="../assets/text-logo.png"
-          alt=""
+          alt="Logo"
         />
-        <ul class="flex list-none text-baase font-normal gap-5 capitalize">
-          <li>about us</li>
-          <li>people</li>
-          <li>jobs</li>
-          <li>login</li>
-          <li>join now</li>
-          <li class="text-[#6851ff]">employee / post job</li>
+
+        <!-- Navigation -->
+        <ul
+          id="nav-menu"
+          class="hidden min-[900px]:flex list-none text-base font-normal gap-5 capitalize max-lg:gap-4 max-lg:text-sm"
+        >
+          <li class="cursor-pointer">about us</li>
+          <li class="cursor-pointer">people</li>
+          <li class="cursor-pointer">jobs</li>
+          <li class="cursor-pointer">login</li>
+          <li class="cursor-pointer">join now</li>
+          <li class="cursor-pointer text-[#6851ff]">employee / post job</li>
         </ul>
-        
-        <div>
-            <label class="ui-switch">
-                <input type="checkbox" />
-                <div class="slider">
-                  <div class="circle"></div>
-                </div>
-              </label>
+
+        <!-- Hamburger and Theme Switch -->
+        <div class="flex flex-row-reverse items-center gap-5">
+          <!-- Theme Switch -->
+          <label class="ui-switch max-lg:w-10 flex items-center">
+            <input type="checkbox" />
+            <div class="slider">
+              <div class="circle max-lg:w-[50%]"></div>
+            </div>
+          </label>
+
+          <!-- Hamburger Icon -->
+          <button
+            id="hamburger"
+            class="text-2xl focus:outline-none min-[900px]:hidden"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
         </div>
       </nav>
     </header>
+
+    <!-- Left Slide Navigation -->
+    <div id="mobile-nav">
+      <!-- Logo inside the Slide Nav -->
+      <img
+        class="logo"
+        src="../assets/text-logo.png"
+        alt="Logo"
+      />
+
+      <!-- Navigation Links inside Slide Nav -->
+      <ul>
+        <li>about us</li>
+        <li>people</li>
+        <li>jobs</li>
+        <li>login</li>
+        <li>join now</li>
+        <li class="text-[#6851ff]">employee / post job</li>
+      </ul>
+
+      <!-- Job Now Button -->
+      <div class="btn-job-now">Job Now</div>
+    </div>
 
     <script src="app.js"></script>
   </body>
