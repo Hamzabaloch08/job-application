@@ -99,7 +99,7 @@ body{
   position: fixed;
   top: 0;
   left: -250px;
-  width: 250px;
+  width: 240px;
   height: 100%;
   background-color: #fff;
   transition: left 0.3s ease-in-out;
@@ -110,44 +110,6 @@ body{
   left: 0;
 }
 
-#mobile-nav ul {
-  list-style-type: none;
-  padding: 20px;
-  margin: 0;
-}
-
-#mobile-nav ul li {
-  padding: 10px 0;
-  font-size: 18px;
-  color: #000;
-}
-
-#mobile-nav ul li:hover {
-  color: #6851ff; /* Highlight menu items on hover */
-}
-
-#mobile-nav .btn-job-now {
-  background-color: #6851ff;
-  color: white;
-  padding: 10px 20px;
-  margin-top: 20px;
-  text-align: center;
-  cursor: pointer;
-  border-radius: 5px;
-  display: inline-block;
-  text-decoration: none;
-}
-
-#mobile-nav .btn-job-now:hover {
-  background-color: #5740d6; /* Darker shade on hover */
-}
-
-#mobile-nav .logo {
-  width: 150px;
-  height: 30px;
-  margin: 20px 0;
-}
-
 /* Style for the overlay background */
 #overlay {
   position: fixed;
@@ -155,7 +117,7 @@ body{
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.545);
   transition: opacity 0.3s ease-in-out;
   z-index: 40;
 }

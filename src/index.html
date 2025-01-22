@@ -17,11 +17,11 @@
     <div id="overlay" class="hidden fixed inset-0 bg-black opacity-50 z-40"></div>
 
     <!-- Header -->
-    <header class="py-[22px] px-[100px] max-lg:px-[80px]">
+    <header class="py-[22px] px-[100px] max-lg:px-[80px] max-[900px]:px-[30px] max-[425px]:px-5">
       <nav class="flex justify-between items-center">
         <!-- Logo -->
         <img
-          class="text-logo w-[186.35px] h-9 max-lg:w-[150px] max-lg:h-[30]"
+          class="text-logo w-[186.35px] h-9 max-lg:w-[150px] max-lg:h-[30] max-[900px]:w-[186.35px] max-[900px]:h-auto max-md:w-[170px] max-md:h-auto max-[425px]:w-[150px]"
           src="../assets/text-logo.png"
           alt="Logo"
         />
@@ -40,11 +40,11 @@
         </ul>
 
         <!-- Hamburger and Theme Switch -->
-        <div class="flex flex-row-reverse items-center gap-5">
+        <div class="flex flex-row-reverse items-center gap-3">
           <!-- Theme Switch -->
-          <label class="ui-switch max-lg:w-10 flex items-center">
+          <label class="ui-switch  flex items-center">
             <input type="checkbox" />
-            <div class="slider">
+            <div class="slider w-[50px]">
               <div class="circle max-lg:w-[50%]"></div>
             </div>
           </label>
@@ -54,33 +54,32 @@
             id="hamburger"
             class="text-2xl focus:outline-none min-[900px]:hidden"
           >
-            <i class="fas fa-bars"></i>
+            <i class="fas fa-bars text-[1.2rem]"></i>
           </button>
         </div>
       </nav>
     </header>
 
     <!-- Left Slide Navigation -->
-    <div id="mobile-nav">
+    <div id="mobile-nav" class="p-[25px]">
       <!-- Logo inside the Slide Nav -->
       <img
-        class="logo"
+        class="logo w-[186.35px] h-[36px] max-[425px]:w-[150px] max-[425px]:h-auto"
         src="../assets/text-logo.png"
         alt="Logo"
       />
 
       <!-- Navigation Links inside Slide Nav -->
-      <ul>
-        <li>about us</li>
-        <li>people</li>
-        <li>jobs</li>
-        <li>login</li>
-        <li>join now</li>
-        <li class="text-[#6851ff]">employee / post job</li>
+      <ul class="list-none">
+        <li class="my-[25px] text-base capitalize text-[#313131] ">about us</li>
+        <li class="my-[25px] text-base capitalize text-[#313131] ">people</li>
+        <li class="my-[25px] text-base capitalize text-[#313131] ">jobs</li>
+        <li class="my-[25px] text-base capitalize text-[#313131] ">login</li>
+        <li class="my-[25px] text-base capitalize text-[#313131] ">employee / post job</li>
       </ul>
 
       <!-- Job Now Button -->
-      <div class="btn-job-now">Job Now</div>
+      <button class="rounded-3xl py-2 px-[17px] text-white bg-[#6851ff] text-sm font-extrabold shadow-md shadow-gray-600">Join Now</button>
     </div>
 
     <script src="app.js"></script>
