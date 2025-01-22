@@ -570,6 +570,11 @@ video {
   z-index: 40;
 }
 
+.my-\[25px\] {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
 .flex {
   display: flex;
 }
@@ -580,6 +585,10 @@ video {
 
 .h-9 {
   height: 2.25rem;
+}
+
+.h-\[36px\] {
+  height: 36px;
 }
 
 .w-\[186\.35px\] {
@@ -614,9 +623,18 @@ video {
   gap: 1.25rem;
 }
 
+.bg-\[\#6851ff\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(104 81 255 / var(--tw-bg-opacity, 1));
+}
+
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
+}
+
+.p-\[25px\] {
+  padding: 25px;
 }
 
 .px-\[100px\] {
@@ -645,6 +663,11 @@ video {
 
 .capitalize {
   text-transform: capitalize;
+}
+
+.text-\[\#313131\] {
+  --tw-text-opacity: 1;
+  color: rgb(49 49 49 / var(--tw-text-opacity, 1));
 }
 
 .text-\[\#6851ff\] {
@@ -750,46 +773,6 @@ body{
   left: 0;
 }
 
-#mobile-nav ul {
-  list-style-type: none;
-  padding: 20px;
-  margin: 0;
-}
-
-#mobile-nav ul li {
-  padding: 10px 0;
-  font-size: 18px;
-  color: #000;
-}
-
-#mobile-nav ul li:hover {
-  color: #6851ff;
-  /* Highlight menu items on hover */
-}
-
-#mobile-nav .btn-job-now {
-  background-color: #6851ff;
-  color: white;
-  padding: 10px 20px;
-  margin-top: 20px;
-  text-align: center;
-  cursor: pointer;
-  border-radius: 5px;
-  display: inline-block;
-  text-decoration: none;
-}
-
-#mobile-nav .btn-job-now:hover {
-  background-color: #5740d6;
-  /* Darker shade on hover */
-}
-
-#mobile-nav .logo {
-  width: 150px;
-  height: 30px;
-  margin: 20px 0;
-}
-
 /* Style for the overlay background */
 
 #overlay {
@@ -808,6 +791,27 @@ body{
   /* Hide overlay when not active */
 }
 
+.hover\:text-\[\]:hover {
+  color: ;
+}
+
+.hover\:text-\[\#\]:hover {
+  color: #;
+}
+
+.hover\:text-\[\#68\]:hover {
+  color: #68;
+}
+
+.hover\:text-\[\#6851\]:hover {
+  color: #6851;
+}
+
+.hover\:text-\[\#6851ff\]:hover {
+  --tw-text-opacity: 1;
+  color: rgb(104 81 255 / var(--tw-text-opacity, 1));
+}
+
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
@@ -816,10 +820,6 @@ body{
 @media not all and (min-width: 1024px) {
   .max-lg\:h-\[30\] {
     height: 30;
-  }
-
-  .max-lg\:w-10 {
-    width: 2.5rem;
   }
 
   .max-lg\:w-\[150px\] {
@@ -839,9 +839,59 @@ body{
     padding-right: 80px;
   }
 
+  .max-lg\:px-\[50px\] {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
   .max-lg\:text-sm {
     font-size: 0.875rem;
     line-height: 1.25rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .max-\[900px\]\:h-9 {
+    height: 2.25rem;
+  }
+
+  .max-\[900px\]\:w-\[\] {
+    width: ;
+  }
+
+  .max-\[900px\]\:w-\[1\] {
+    width: 1;
+  }
+
+  .max-\[900px\]\:w-\[186\] {
+    width: 186;
+  }
+
+  .max-\[900px\]\:w-\[186\.\] {
+    width: 186.;
+  }
+
+  .max-\[900px\]\:w-\[186\.35\] {
+    width: 186.35;
+  }
+
+  .max-\[900px\]\:w-\[186\.35px\] {
+    width: 186.35px;
+  }
+
+  .max-\[900px\]\:px-\[\] {
+    padding-left: ;
+    padding-right: ;
+  }
+
+  .max-\[900px\]\:px-\[50px\] {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .max-\[900px\]\:px-\[30px\] {
+    padding-left: 30px;
+    padding-right: 30px;
   }
 }
 
