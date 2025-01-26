@@ -127,12 +127,20 @@ body{
 }
 
 
-.custom-gradient{
+.purple-to-aqua-gradient{
   background: linear-gradient(106.43deg, #522fd4, #6bdcff 95.12%);
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
+.blue-to-purple-gradient{
+  background: linear-gradient(180deg,#4d3bdb 0%,#9747ff 100%);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+
+/* rippleing in btn */
 
 .ripple-btn {
   position: relative;
