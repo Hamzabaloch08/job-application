@@ -1,12 +1,10 @@
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="../assets/fav.icon.png" type="image/png" />
   <title>Hiring Mine</title>
   <link rel="stylesheet" href="input.css" />
-  <link rel="stylesheet" href="styles.css" />
   <link href="./output.css" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
@@ -127,18 +125,32 @@
     </section>
     <!-- first section end -->
      <!-- second section -->
-      <section>
+      <section class="my-14 ">
         <div class="text-center m-20">
-          <h1 class="text-[#2a2a2a] text-5xl font-semibold"><span class="text-[#6851ff]">Latest And Top</span> Job Openings</h1>
+          <h1 class="text-[#2a2a2a] text-5xl font-semibold"><span class="text-[#6523ff]">Latest And Top</span> Job Openings</h1>
         </div>
+          <!-- carousel -->
+          <div class="flex justify-center items-center px-28 relative gap-x-3">
+            <button class="left-arrow flex justify-center items-center bg-[#4f3bffd5] hover:bg-[#1400c9] p-[1px] text-white rounded-xl font-bold text-xl">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="4" stroke="currentColor" class="w-4 h-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <div id="job-container" class="flex justify-center gap-8 w-max"></div>
+            <button class="right-arrow flex justify-center items-center bg-[#4f3bffd5] hover:bg-[#1400c9] p-[1px] text-white rounded-full font-bold text-xl">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="4" stroke="currentColor" class="w-4 h-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        
         
       </section>
   </main>
 
   <script src="navbar.js"></script>
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script src="ripple-button.js"></script>
+  <script src="./carousel.js" ></script>
+  <script src="ripple-button.js" ></script>
 </body>
 
 </html>
