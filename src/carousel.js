@@ -52,11 +52,10 @@ const card = (jobsCard) => {
                         </div>
                         <h3 class="font-bold text-base text-black mt-1">${job.designation}</h3>
                         <h3 class="font-bold text-base text-[#4D3BDB] mt-1">
-                            ${
-                                job.payRangeStart && job.payRangeEnd
-                                    ? `RS ${job.payRangeStart} - ${job.payRangeEnd}`
-                                    : "No salary mentioned"
-                            }
+                            ${job.payRangeStart && job.payRangeEnd
+                    ? `RS ${job.payRangeStart} - ${job.payRangeEnd}`
+                    : "No salary mentioned"
+                }
                         </h3>
                     </div>
                     <div class="">
@@ -75,5 +74,4 @@ const card = (jobsCard) => {
         })
         .join("");
 };
-
 api(3);
