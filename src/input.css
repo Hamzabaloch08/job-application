@@ -180,3 +180,61 @@ body {
     opacity: 0;
   }
 }
+
+
+/* Hide scrollbar */
+#job-container::-webkit-scrollbar {
+  display: none;
+}
+#job-container {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* Job container */
+#job-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 20px 10px;
+  scroll-snap-type: x mandatory;
+  margin-left: 15px;
+}
+
+/* Individual Job Card */
+.job-card {
+  flex: 0 0 340px;
+  min-width: 380px;
+  height: 40vh;
+  background: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #ccc;
+  transition: transform 0.2s ease-in-out;
+  scroll-snap-align: start;
+}
+
+.job-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Responsive: Make sure 3 cards are always visible */
+@media (max-width: 1024px) {
+  #job-container {
+    gap: 15px;
+  }
+  .job-card {
+    flex: 0 0 300px;
+    min-width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .job-card {
+    flex: 0 0 280px;
+    min-width: 280px;
+  }
+}

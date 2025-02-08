@@ -8,6 +8,7 @@
   <link href="./output.css" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 </head>
 
 <body class="relative transition-all ease-linear duration-300 bg-white">
@@ -129,16 +130,21 @@
         <div class="text-center m-20">
           <h1 class="text-[#2a2a2a] text-5xl font-semibold"><span class="text-[#6523ff]">Latest And Top</span> Job Openings</h1>
         </div>
-          <!-- carousel -->
-          <div class="flex justify-center items-center relative gap-x-5 bg-red-700">
-            <button class="left-arrow flex justify-center items-center bg-[#4f3bffd5] hover:bg-[#1400c9] p-[1px] text-white rounded-xl font-bold text-xl">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="4" stroke="currentColor" class="w-4 h-4">
+          <!-- Carousel Container -->
+          <div class="flex justify-center items-center relative gap-x-5 overflow-hidden p-5">
+            <!-- Left Button -->
+            <button id="leftArrow" class="left-arrow flex justify-center items-center bg-[#4f3bffd5] hover:bg-[#1400c9] p-1 text-white rounded-full font-bold text-xl">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="4" stroke="currentColor" class="w-3 h-3">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
               </svg>
             </button>
-            <div id="job-container" class="grid grid-cols-3  gap-8 w-max bg-green-600 px-5 py-2"></div>
-            <button class="right-arrow flex justify-center items-center bg-[#4f3bffd5] hover:bg-[#1400c9] p-[1px] text-white rounded-full font-bold text-xl">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="4" stroke="currentColor" class="w-4 h-4">
+
+            <!-- Job Cards Wrapper -->
+            <div id="job-container" class="flex gap-8 w-max px-5 py-2 overflow-x-auto whitespace-nowrap scroll-smooth"></div>
+
+            <!-- Right Button -->
+            <button id="rightArrow" class="right-arrow flex items-center bg-[#4f3bffd5] hover:bg-[#1400c9] p-1 text-white rounded-full font-bold text-xl">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="4" stroke="currentColor" class="w-3 h-3">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
               </svg>
             </button>
@@ -148,6 +154,7 @@
 
   <script src="navbar.js"></script>
   <script src="./carousel.js" ></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="ripple-button.js" ></script>
 </body>
 

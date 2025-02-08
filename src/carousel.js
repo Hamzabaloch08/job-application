@@ -1,6 +1,6 @@
-let api = async (jobLimits = 10) => {
+let api = async (jobLimits = 8) => {
     try {
-        const response = await fetch(`https://backend-prod.app.hiringmine.com/api/jobAds/all?limit=${jobLimits}&pageNo=1&keyWord=&category=&isPending=false`);
+        const response = await fetch(`https://hiringmine-railway-production.up.railway.app/api/jobAds/all?limit=${jobLimits}&pageNo=1&keyWord=&category=&isPending=false`);
 
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
@@ -36,15 +36,24 @@ const getTimeAgo = (updatedAt) => {
     return `${diffInYears} years ago`;
 };
 
+const leftArrow = document.getElementById("leftArrow");
+const rightArrow = document.getElementById("rightArrow");
+
+const cardWidth = 320; // Width of one card
+let currentIndex = 0; // Track current scroll position
+let totalCards = 0; // Will update dynamically
+
 const card = (jobsCard) => {
     console.log(jobsCard);
 
+    totalCards = jobsCard.length; // Update total cards
+
     cardContainer.innerHTML = jobsCard
         .map((job) => {
-            const timeAgo = getTimeAgo(job.updatedAt); // Calculate time ago
+            const timeAgo = getTimeAgo(job.updatedAt);
 
             return `
-                <div class="flex flex-col justify-between bg-white shadow-xl py-6 px-6 rounded-lg border border-gray-200 w-[330px] h-[38vh] cursor-pointer transition-all ease-linear duration-200 hover:translate-y-[-5px]">
+                <div class="job-card flex flex-col justify-between bg-white shadow-lg py-6 px-6 rounded-md border border-gray-200 cursor-pointer transition-all ease-linear duration-200 hover:translate-y-[-5px]">
                     <div>
                         <div class="flex justify-between items-start">
                             <h3 class="text-black font-medium text-base">${job.companyName || 'Anonymous'}</h3>
@@ -58,7 +67,7 @@ const card = (jobsCard) => {
                 }
                         </h3>
                     </div>
-                    <div class="">
+                    <div>
                         <div class="flex justify-between text-gray-600 text-base mt-2">
                             <h3 class="text-black">${job.city ? job.city + ", " : ""}${job.country || ""}</h3>
                             <h3 class="text-black">${job.views} views</h3>
@@ -73,5 +82,43 @@ const card = (jobsCard) => {
                 </div>`;
         })
         .join("");
+
+    currentIndex = 0; // Reset to first card
 };
-api(3);
+
+// Fetch API
+api(8);
+
+setTimeout(() => {
+    setInterval(() => {
+        if (currentIndex == totalCards - 1) {
+            currentIndex = 0
+        } else {
+            currentIndex = +1;
+        }
+        cardContainer.scrollTo({ left: currentIndex * cardWidth, behavior: "smooth" });
+    }, 2000);
+}, 1000);
+
+
+
+// Scroll Event Handlers
+leftArrow.addEventListener("click", () => {
+    console.log('left')
+    if (currentIndex === 0) {
+        currentIndex = totalCards - 1;
+    } else {
+        currentIndex = -1;
+    }
+    cardContainer.scrollTo({ left: currentIndex * cardWidth, behavior: "smooth" });
+});
+
+rightArrow.addEventListener("click", () => {
+    console.log('right')
+    if (currentIndex == totalCards - 1) {
+        currentIndex = 0
+    } else {
+        currentIndex = +1;
+    }
+    cardContainer.scrollTo({ left: currentIndex * cardWidth, behavior: "smooth" });
+});
