@@ -94,13 +94,11 @@ setTimeout(() => {
         if (currentIndex == totalCards - 1) {
             currentIndex = 0
         } else {
-            currentIndex = +1;
+            currentIndex++;
         }
         cardContainer.scrollTo({ left: currentIndex * cardWidth, behavior: "smooth" });
     }, 2000);
 }, 1000);
-
-
 
 // Scroll Event Handlers
 leftArrow.addEventListener("click", () => {
@@ -108,7 +106,7 @@ leftArrow.addEventListener("click", () => {
     if (currentIndex === 0) {
         currentIndex = totalCards - 1;
     } else {
-        currentIndex = -1;
+        currentIndex--;
     }
     cardContainer.scrollTo({ left: currentIndex * cardWidth, behavior: "smooth" });
 });
@@ -118,7 +116,7 @@ rightArrow.addEventListener("click", () => {
     if (currentIndex == totalCards - 1) {
         currentIndex = 0
     } else {
-        currentIndex = +1;
+        currentIndex++;
     }
     cardContainer.scrollTo({ left: currentIndex * cardWidth, behavior: "smooth" });
 });
