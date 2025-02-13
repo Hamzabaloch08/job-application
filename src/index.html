@@ -1,161 +1,288 @@
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="../assets/fav.icon.png" type="image/png" />
-  <title>Hiring Mine</title>
-  <link rel="stylesheet" href="input.css" />
-  <link href="./output.css" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../assets/fav.icon.png" type="image/png" />
+    <title>Hiring Mine</title>
+    <link rel="stylesheet" href="input.css" />
+    <link href="./output.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
 
-<body class="relative transition-all ease-linear duration-300 bg-white">
-  <!-- Overlay for dimming the background -->
-  <div id="overlay" class="hidden fixed inset-0 bg-black opacity-50 z-40"></div>
+  <body class="relative transition-all ease-linear duration-300 bg-white">
+    <!-- Overlay for dimming the background -->
+    <div
+      id="overlay"
+      class="hidden fixed inset-0 bg-black opacity-50 z-40"
+    ></div>
 
-  <!-- Header -->
-  <header class="py-[22px] px-[100px] max-lg:px-[80px] max-[900px]:px-[30px] max-[425px]:px-5">
-    <nav class="flex justify-between items-center">
-      <!-- Logo -->
+    <!-- Header -->
+    <header
+      class="py-[22px] px-[100px] max-lg:px-[80px] max-[900px]:px-[30px] max-[425px]:px-5"
+    >
+      <nav class="flex justify-between items-center">
+        <!-- Logo -->
+        <img
+          class="text-logo w-[186.35px] h-9 max-lg:w-[150px] max-lg:h-[30] max-[900px]:w-[186.35px] max-[900px]:h-auto max-md:w-[170px] max-md:h-auto max-[425px]:w-[150px]"
+          src="../assets/text-logo.png"
+          alt="Logo"
+        />
+
+        <!-- Navigation -->
+        <ul
+          id="nav-menu"
+          class="hidden min-[900px]:flex list-none text-base font-normal gap-5 capitalize max-lg:gap-4 max-lg:text-sm"
+        >
+          <li class="cursor-pointer">about us</li>
+          <li class="cursor-pointer">people</li>
+          <li class="cursor-pointer">jobs</li>
+          <li class="cursor-pointer">login</li>
+          <li class="cursor-pointer">join now</li>
+          <li class="cursor-pointer text-[#6851ff]">employee / post job</li>
+        </ul>
+
+        <!-- Hamburger and Theme Switch -->
+        <div class="flex flex-row-reverse items-center gap-3">
+          <!-- Theme Switch -->
+          <label class="ui-switch flex items-center">
+            <input type="checkbox" id="switcher" />
+            <div class="slider w-[50px]">
+              <div class="circle max-lg:w-[50%]"></div>
+            </div>
+          </label>
+          <!-- Hamburger Icon -->
+          <button
+            id="hamburger"
+            class="text-2xl focus:outline-none min-[900px]:hidden"
+          >
+            <i class="fas fa-bars text-[1.2rem]"></i>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Left Slide Navigation -->
+    <div id="mobile-nav" class="p-[25px]">
+      <!-- Logo inside the Slide Nav -->
       <img
-        class="text-logo w-[186.35px] h-9 max-lg:w-[150px] max-lg:h-[30] max-[900px]:w-[186.35px] max-[900px]:h-auto max-md:w-[170px] max-md:h-auto max-[425px]:w-[150px]"
-        src="../assets/text-logo.png" alt="Logo" />
+        class="logo w-[186.35px] h-[36px] max-[425px]:w-[150px] max-[425px]:h-auto"
+        src="../assets/text-logo.png"
+        alt="Logo"
+      />
 
-      <!-- Navigation -->
-      <ul id="nav-menu"
-        class="hidden min-[900px]:flex list-none text-base font-normal gap-5 capitalize max-lg:gap-4 max-lg:text-sm">
-        <li class="cursor-pointer">about us</li>
-        <li class="cursor-pointer">people</li>
-        <li class="cursor-pointer">jobs</li>
-        <li class="cursor-pointer">login</li>
-        <li class="cursor-pointer">join now</li>
-        <li class="cursor-pointer text-[#6851ff]">employee / post job</li>
+      <!-- Navigation Links inside Slide Nav -->
+      <ul class="list-none">
+        <li class="my-[25px] text-base capitalize text-[#313131]">about us</li>
+        <li class="my-[25px] text-base capitalize text-[#313131]">people</li>
+        <li class="my-[25px] text-base capitalize text-[#313131]">jobs</li>
+        <li class="my-[25px] text-base capitalize text-[#313131]">login</li>
+        <li class="my-[25px] text-base capitalize text-[#313131]">
+          employee / post job
+        </li>
       </ul>
 
-      <!-- Hamburger and Theme Switch -->
-      <div class="flex flex-row-reverse items-center gap-3">
-        <!-- Theme Switch -->
-        <label class="ui-switch flex items-center">
-          <input type="checkbox" id="switcher" />
-          <div class="slider w-[50px]">
-            <div class="circle max-lg:w-[50%]"></div>
-          </div>
-        </label>
-        <!-- Hamburger Icon -->
-        <button id="hamburger" class="text-2xl focus:outline-none min-[900px]:hidden">
-          <i class="fas fa-bars text-[1.2rem]"></i>
-        </button>
-      </div>
-    </nav>
-  </header>
-
-  <!-- Left Slide Navigation -->
-  <div id="mobile-nav" class="p-[25px]">
-    <!-- Logo inside the Slide Nav -->
-    <img class="logo w-[186.35px] h-[36px] max-[425px]:w-[150px] max-[425px]:h-auto" src="../assets/text-logo.png" alt="Logo" />
-
-    <!-- Navigation Links inside Slide Nav -->
-    <ul class="list-none">
-      <li class="my-[25px] text-base capitalize text-[#313131]">about us</li>
-      <li class="my-[25px] text-base capitalize text-[#313131]">people</li>
-      <li class="my-[25px] text-base capitalize text-[#313131]">jobs</li>
-      <li class="my-[25px] text-base capitalize text-[#313131]">login</li>
-      <li class="my-[25px] text-base capitalize text-[#313131]">
-        employee / post job
-      </li>
-    </ul>
-
-    <!-- Job Now Button -->
-    <button class="ripple-btn rounded-3xl py-2 px-[17px] text-white bg-[#6851ff] text-sm font-extrabold shadow-md shadow-gray-600">Join Now</button>
-  </div>
-  <!-- header section end -->
-  <!-- main -->
-  <main>
-    <!-- first section -->
-    <section class="flex flex-col text-center items-center bg-gradient-to-b from-white to-[#f3f1ff]">
-      <div
-        class="text-[80px] max-[900px]:text-[60px] max-[900px]:leading-[75px] max-[600px]:text-[45px] max-[600px]:leading-[58px] max-[425px]:text-[40px] max-[425px]:leading-[50px] max-[375px]:text-[32px] max-[375px]:leading-[40px] font-black tracking-[-.02em] leading-[100px] mt-10"
-        role="heading">
-        <h1 class="purple-to-aqua-gradient">Dig. Apply</h1>
-        <h1 class="purple-to-aqua-gradient">Prepare Your Future</h1>
-      </div>
-      <div class="mt-4 leading-8 w-[58%]">
-        <p class="text-xl">
-          Hiring Mine connects employer and job seekers, where employers are
-          the source of the resources and the job seeker can find and apply
-          for their targeted job.
-        </p>
-      </div>
-      <div class="w-full flex justify-center items-center my-7 px-4 py-1">
-        <div class="flex items-center justify-center relative w-full max-w-[40%] h-[8vh]">
-          <input type="text" autocomplete="off"
-            class="peer w-full py-2 pl-4 pr-[300px] sm:pr-[400px] text-sm sm:text-base bg-transparent border border-gray-400 rounded-md outline-none focus:border-[#6851ff] hover:border-gray-900 transition-all duration-200 ease-in-out" />
-          <label for="name"
-            class="absolute left-3 text-sm sm:text-base text-gray-500 bg-[#faf9ff] px-1 transition-all duration-300 ease-in-out transform scale-100 pointer-events-none peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-[23px] peer-focus:scale-90 peer-focus:text-[#6851ff] peer-focus:left-1">
-            Search by Role or Keyword
-          </label>
+      <!-- Job Now Button -->
+      <button
+        class="ripple-btn rounded-3xl py-2 px-[17px] text-white bg-[#6851ff] text-sm font-extrabold shadow-md shadow-gray-600"
+      >
+        Join Now
+      </button>
+    </div>
+    <!-- header section end -->
+    <!-- main -->
+    <main>
+      <!-- first section -->
+      <section
+        class="flex flex-col text-center items-center bg-gradient-to-b from-white to-[#f3f1ff]"
+      >
+        <div
+          class="text-[80px] max-lg:text-[70px] max-[900px]:text-[60px] max-[900px]:leading-[75px] max-[600px]:text-[45px] max-[600px]:leading-[58px] max-[425px]:text-[40px] max-[425px]:leading-[50px] max-[375px]:text-[32px] max-[375px]:leading-[40px] font-black tracking-[-.02em] leading-[100px] mt-10"
+          role="heading"
+        >
+          <h1 class="purple-to-aqua-gradient">Dig. Apply</h1>
+          <h1 class="purple-to-aqua-gradient">Prepare Your Future</h1>
         </div>
-      </div>
-      <div class="relative overflow-hidden rounded-3xl">
-        <button
-          class="ripple-btn relative z-10 rounded-3xl py-[10px] px-7 text-white bg-[#6851ff] text-base font-extrabold shadow-sm shadow-gray-600 capitalize transition-all ease-in-out duration-200 hover:bg-[#3f2fa5]">
-          Find Jobs
-        </button>
-      </div>
-      <div class="flex justify-center items-center flex-col mt-7">
-        <h1 class="blue-to-purple-gradient font-black text-3xl  tracking-[-.02em]">Popular Searches</h1>
-        <div class="flex justify-center gap-4 mt-7 flex-wrap w-[65%]">
-          <button class="hover:bg-slate-100 border-[1px] border-opacity-50 hover:border-opacity-100 transition-all ease-linear duration-150 border-[#6851ff] py-1 px-3 text-sm rounded-md capitalize text-[#6851ff] font-black">software</button>
-          <button class="hover:bg-slate-100 border-[1px] border-opacity-50 hover:border-opacity-100 transition-all ease-linear duration-150 border-[#6851ff] py-1 px-3 text-sm rounded-md capitalize text-[#6851ff] font-black">developer</button>
-          <button class="hover:bg-slate-100 border-[1px] border-opacity-50 hover:border-opacity-100 transition-all ease-linear duration-150 border-[#6851ff] py-1 px-3 text-sm rounded-md capitalize text-[#6851ff] font-black">backend</button>
-          <button class="hover:bg-slate-100 border-[1px] border-opacity-50 hover:border-opacity-100 transition-all ease-linear duration-150 border-[#6851ff] py-1 px-3 text-sm rounded-md capitalize text-[#6851ff] font-black">react</button>
-          <button class="hover:bg-slate-100 border-[1px] border-opacity-50 hover:border-opacity-100 transition-all ease-linear duration-150 border-[#6851ff] py-1 px-3 text-sm rounded-md capitalize text-[#6851ff] font-black">node</button>
-          <button class="hover:bg-slate-100 border-[1px] border-opacity-50 hover:border-opacity-100 transition-all ease-linear duration-150 border-[#6851ff] py-1 px-3 text-sm rounded-md capitalize text-[#6851ff] font-black">react native</button>
-          <button class="hover:bg-slate-100 border-[1px] border-opacity-50 hover:border-opacity-100 transition-all ease-linear duration-150 border-[#6851ff] py-1 px-3 text-sm rounded-md capitalize text-[#6851ff] font-black">flutter</button>
-          <button class="hover:bg-slate-100 border-[1px] border-opacity-50 hover:border-opacity-100 transition-all ease-linear duration-150 border-[#6851ff] py-1 px-3 text-sm rounded-md uppercase  text-[#6851ff] font-black">ui/ux</button>
-          <button class="hover:bg-slate-100 border-[1px] border-opacity-50 hover:border-opacity-100 transition-all ease-linear duration-150 border-[#6851ff] py-1 px-3 text-sm rounded-md capitalize text-[#6851ff] font-black">designer</button>
-          <button class="hover:bg-slate-100 border-[1px] border-opacity-50 hover:border-opacity-100 transition-all ease-linear duration-150 border-[#6851ff] py-1 px-3 text-sm rounded-md capitalize text-[#6851ff] font-black">web</button>
-          <button class="hover:bg-slate-100 border-[1px] border-opacity-50 hover:border-opacity-100 transition-all ease-linear duration-150 border-[#6851ff] py-1 px-3 text-sm rounded-md capitalize text-[#6851ff] font-black">seo</button>
-          <button class="hover:bg-slate-100 border-[1px] border-opacity-50 hover:border-opacity-100 transition-all ease-linear duration-150 border-[#6851ff] py-1 px-3 text-sm rounded-md capitalize text-[#6851ff] font-black">marketing</button>
-          <button class="hover:bg-slate-100 border-[1px] border-opacity-50 hover:border-opacity-100 transition-all ease-linear duration-150 border-[#6851ff] py-1 px-3 text-sm rounded-md capitalize text-[#6851ff] font-black">writer</button>
+        <div class="mt-4 leading-8 w-[58%] max-sm:w-[75%]">
+          <p
+            class="text-xl max-lg:text-base max-sm:text-sm max-[425px]:text-xs"
+          >
+            Hiring Mine connects employer and job seekers, where employers are
+            the source of the resources and the job seeker can find and apply
+            for their targeted job.
+          </p>
         </div>
-        <img src="../assets/art work-sec1-bg.png" alt="">
-      </div>
-    </section>
-    <!-- first section end -->
-     <!-- second section -->
-      <section class="my-14 ">
-        <div class="text-center m-20">
-          <h1 class="text-[#2a2a2a] text-5xl font-semibold"><span class="text-[#6523ff]">Latest And Top</span> Job Openings</h1>
+        <div
+          class="w-full flex justify-center items-center my-6 px-4 flex-wrap gap-3"
+        >
+          <input
+            type="text"
+            placeholder="Search by Role or Keyword"
+            class="text-sm max-sm:text-xs max-md:text-sm max-lg:text-base placeholder:text-xs max-sm:placeholder:text-[10px] max-md:placeholder:text-xs max-lg:placeholder:text-sm bg-transparent border border-gray-400 rounded-[3px] outline-none focus:border-[#6851ff] hover:border-gray-900 transition-all duration-200 ease-in-out py-1 pl-4 w-[90%] max-md:w-[70%] max-lg:w-[50%] lg:w-[42%]"
+          />
         </div>
-          <!-- Carousel Container -->
-          <div class="flex justify-center items-center relative gap-x-5 overflow-hidden p-5">
-            <!-- Left Button -->
-            <button id="leftArrow" class="left-arrow flex justify-center items-center bg-[#4f3bffd5] hover:bg-[#1400c9] p-1 text-white rounded-full font-bold text-xl">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="4" stroke="currentColor" class="w-3 h-3">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
-              </svg>
+        <div class="relative overflow-hidden rounded-3xl">
+          <button
+            class="ripple-btn relative z-10 rounded-3xl py-[10px] px-7 text-white bg-[#6851ff] text-sm max-sm:text-xs max-md:text-sm max-lg:text-base font-extrabold shadow-sm shadow-gray-600 capitalize transition-all ease-in-out duration-200 hover:bg-[#3f2fa5] w-full max-md:w-auto"
+          >
+            Find Jobs
+          </button>
+        </div>
+        <div class="flex justify-center items-center flex-col mt-7">
+          <h1
+            class="blue-to-purple-gradient font-black text-2xl max-sm:text-xl max-md:text-2xl max-lg:text-3xl tracking-[-.02em] text-center"
+          >
+            Popular Searches
+          </h1>
+          <div
+            class="flex justify-center gap-2 max-sm:gap-1 max-md:gap-2 max-lg:gap-3 mt-5 flex-wrap w-[85%] max-lg:w-[75%] lg:w-[65%]"
+          >
+            <button
+              class="hover:bg-slate-100 border-[1px] border-opacity-50 hover:border-opacity-100 transition-all ease-linear duration-150 border-[#6851ff] py-1 px-3 text-xs max-sm:text-[10px] max-md:text-xs max-lg:text-sm rounded-md capitalize text-[#6851ff] font-black"
+            >
+              software
             </button>
-
-            <!-- Job Cards Wrapper -->
-            <div id="job-container" class="flex gap-8 w-max px-5 py-2 overflow-x-auto whitespace-nowrap scroll-smooth"></div>
-
-            <!-- Right Button -->
-            <button id="rightArrow" class="right-arrow flex items-center bg-[#4f3bffd5] hover:bg-[#1400c9] p-1 text-white rounded-full font-bold text-xl">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="4" stroke="currentColor" class="w-3 h-3">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-              </svg>
+            <button
+              class="hover:bg-slate-100 border-[1px] border-opacity-50 hover:border-opacity-100 transition-all ease-linear duration-150 border-[#6851ff] py-1 px-3 text-xs max-sm:text-[10px] max-md:text-xs max-lg:text-sm rounded-md capitalize text-[#6851ff] font-black"
+            >
+              developer
+            </button>
+            <button
+              class="hover:bg-slate-100 border-[1px] border-opacity-50 hover:border-opacity-100 transition-all ease-linear duration-150 border-[#6851ff] py-1 px-3 text-xs max-sm:text-[10px] max-md:text-xs max-lg:text-sm rounded-md capitalize text-[#6851ff] font-black"
+            >
+              backend
+            </button>
+            <button
+              class="hover:bg-slate-100 border-[1px] border-opacity-50 hover:border-opacity-100 transition-all ease-linear duration-150 border-[#6851ff] py-1 px-3 text-xs max-sm:text-[10px] max-md:text-xs max-lg:text-sm rounded-md capitalize text-[#6851ff] font-black"
+            >
+              react
+            </button>
+            <button
+              class="hover:bg-slate-100 border-[1px] border-opacity-50 hover:border-opacity-100 transition-all ease-linear duration-150 border-[#6851ff] py-1 px-3 text-xs max-sm:text-[10px] max-md:text-xs max-lg:text-sm rounded-md capitalize text-[#6851ff] font-black"
+            >
+              node
+            </button>
+            <button
+              class="hover:bg-slate-100 border-[1px] border-opacity-50 hover:border-opacity-100 transition-all ease-linear duration-150 border-[#6851ff] py-1 px-3 text-xs max-sm:text-[10px] max-md:text-xs max-lg:text-sm rounded-md capitalize text-[#6851ff] font-black"
+            >
+              react native
+            </button>
+            <button
+              class="hover:bg-slate-100 border-[1px] border-opacity-50 hover:border-opacity-100 transition-all ease-linear duration-150 border-[#6851ff] py-1 px-3 text-xs max-sm:text-[10px] max-md:text-xs max-lg:text-sm rounded-md capitalize text-[#6851ff] font-black"
+            >
+              flutter
+            </button>
+            <button
+              class="hover:bg-slate-100 border-[1px] border-opacity-50 hover:border-opacity-100 transition-all ease-linear duration-150 border-[#6851ff] py-1 px-3 text-xs max-sm:text-[10px] max-md:text-xs max-lg:text-sm rounded-md uppercase text-[#6851ff] font-black"
+            >
+              ui/ux
+            </button>
+            <button
+              class="hover:bg-slate-100 border-[1px] border-opacity-50 hover:border-opacity-100 transition-all ease-linear duration-150 border-[#6851ff] py-1 px-3 text-xs max-sm:text-[10px] max-md:text-xs max-lg:text-sm rounded-md capitalize text-[#6851ff] font-black"
+            >
+              designer
+            </button>
+            <button
+              class="hover:bg-slate-100 border-[1px] border-opacity-50 hover:border-opacity-100 transition-all ease-linear duration-150 border-[#6851ff] py-1 px-3 text-xs max-sm:text-[10px] max-md:text-xs max-lg:text-sm rounded-md capitalize text-[#6851ff] font-black"
+            >
+              web
+            </button>
+            <button
+              class="hover:bg-slate-100 border-[1px] border-opacity-50 hover:border-opacity-100 transition-all ease-linear duration-150 border-[#6851ff] py-1 px-3 text-xs max-sm:text-[10px] max-md:text-xs max-lg:text-sm rounded-md capitalize text-[#6851ff] font-black"
+            >
+              seo
+            </button>
+            <button
+              class="hover:bg-slate-100 border-[1px] border-opacity-50 hover:border-opacity-100 transition-all ease-linear duration-150 border-[#6851ff] py-1 px-3 text-xs max-sm:text-[10px] max-md:text-xs max-lg:text-sm rounded-md capitalize text-[#6851ff] font-black"
+            >
+              marketing
+            </button>
+            <button
+              class="hover:bg-slate-100 border-[1px] border-opacity-50 hover:border-opacity-100 transition-all ease-linear duration-150 border-[#6851ff] py-1 px-3 text-xs max-sm:text-[10px] max-md:text-xs max-lg:text-sm rounded-md capitalize text-[#6851ff] font-black"
+            >
+              writer
             </button>
           </div>
+          <img
+            src="../assets/art work-sec1-bg.png"
+            alt=""
+            class="w-full mt-6"
+          />
+        </div>
       </section>
-  </main>
+      <!-- first section end -->
+      <!-- second section -->
+      <section class="my-14">
+        <div class="text-center m-20">
+          <h1 class="text-[#2a2a2a] text-5xl font-semibold">
+            <span class="text-[#6523ff]">Latest And Top</span> Job Openings
+          </h1>
+        </div>
+        <!-- Carousel Container -->
+        <div
+          class="flex justify-center items-center relative gap-x-5 overflow-hidden p-5"
+        >
+          <!-- Left Button -->
+          <button
+            id="leftArrow"
+            class="left-arrow flex justify-center items-center bg-[#4f3bffd5] hover:bg-[#1400c9] p-1 text-white rounded-full font-bold text-xl"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="4"
+              stroke="currentColor"
+              class="w-3 h-3"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </button>
 
-  <script src="navbar.js"></script>
-  <script src="./carousel.js" ></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="ripple-button.js" ></script>
-</body>
+          <!-- Job Cards Wrapper -->
+          <div
+            id="job-container"
+            class="flex gap-8 w-max px-5 py-2 overflow-x-auto whitespace-nowrap scroll-smooth"
+          ></div>
 
+          <!-- Right Button -->
+          <button
+            id="rightArrow"
+            class="right-arrow flex items-center bg-[#4f3bffd5] hover:bg-[#1400c9] p-1 text-white rounded-full font-bold text-xl"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="4"
+              stroke="currentColor"
+              class="w-3 h-3"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <script src="navbar.js"></script>
+    <script src="./carousel.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="ripple-button.js"></script>
+  </body>
 </html>
