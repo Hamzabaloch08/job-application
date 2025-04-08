@@ -17,6 +17,32 @@
   <header class="py-[22px] px-[100px] max-lg:px-[80px] max-[900px]:px-[30px] max-[425px]:px-5">
     <nav class="flex justify-between items-center">
       <!-- Logo -->
+      <img
+        class="text-logo w-[186.35px] h-9 max-lg:w-[150px] max-lg:h-[30] max-[900px]:w-[186.35px] max-[900px]:h-auto max-md:w-[170px] max-md:h-auto max-[425px]:w-[150px]"
+        src="../assets/text-logo.png" alt="Logo" />
+
+      <!-- Search Bar -->
+      <div class="w-[50%] flex justify-center items-center my-6 px-4 flex-wrap gap-3">
+        <input type="text" placeholder="Search Jobs title or companies"
+          class="text-sm max-sm:text-xs max-md:text-sm max-lg:text-base placeholder:text-sm max-sm:placeholder:text-[10px] max-md:placeholder:text-xs max-lg:placeholder:text-sm bg-transparent border border-gray-400 rounded-[3px] outline-none focus:border-[#6851ff] hover:border-gray-900 transition-all duration-200 ease-in-out py-2 pl-4 w-[90%] max-md:w-[70%] max-lg:w-[50%] lg:w-[42%]" />
+      </div>
+
+      <!-- Hamburger and Theme Switch -->
+      <div class="flex flex-row-reverse items-center gap-3">
+        <!-- Theme Switch -->
+        <label class="ui-switch flex items-center">
+          <input type="checkbox" id="switcher" />
+          <div class="slider w-[50px]">
+            <div class="circle max-lg:w-[50%]"></div>
+          </div>
+        </label>
+        <!-- Hamburger Icon -->
+        <button id="hamburger" class="text-2xl focus:outline-none min-[900px]:hidden">
+          <i class="fas fa-bars text-[1.2rem]"></i>
+        </button>
+      </div>
+    </nav>
+
           </div>
   </header>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
