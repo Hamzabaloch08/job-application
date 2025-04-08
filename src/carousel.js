@@ -48,13 +48,21 @@ let totalCards = 0; // Will update dynamically
 const card = (jobsCard) => {
   console.log(jobsCard);
 
-  totalCards = jobsCard.length; // Update total cards
+  totalCards = jobsCard.length;
+  currentIndex = 0;
 
   cardContainer.innerHTML = jobsCard
     .map((job) => {
       const timeAgo = getTimeAgo(job.updatedAt);
       return `
-        <div class="job-card flex flex-col justify-between bg-white shadow-lg py-6 px-6 rounded-md border border-gray-200 cursor-pointer transition-all ease-linear duration-200 hover:translate-y-[-5px] max-lg:min-w-[330px] max-lg:px-4 max-lg:py-4 max-md:min-w-[280px]">
+        <div class="job-card flex flex-col justify-between bg-white shadow-lg py-6 px-6 rounded-md border border-gray-200 cursor-pointer transition-all ease-linear duration-200 hover:translate-y-[-5px] 
+  w-[340px] min-w-[340px] 
+  lg:w-[340px] lg:min-w-[340px] 
+  md:w-[45%] md:min-w-[45%] 
+  sm:w-[90%] sm:min-w-[90%] 
+  max-sm:w-full max-sm:min-w-full">
+
+          
           <div>
             <div class="flex justify-between items-start">
               <h3 class="text-black font-medium text-base max-lg:text-sm">${job.companyName || "Anonymous"}</h3>
@@ -62,12 +70,10 @@ const card = (jobsCard) => {
             </div>
             <h3 class="font-bold text-base text-black mt-1 max-lg:text-sm">${job.designation}</h3>
             <h3 class="font-bold text-base text-[#4D3BDB] mt-1 max-lg:text-sm">
-              ${job.payRangeStart && job.payRangeEnd
-          ? `RS ${job.payRangeStart} - ${job.payRangeEnd}`
-          : "No salary mentioned"
-        }
+              ${job.payRangeStart && job.payRangeEnd ? `RS ${job.payRangeStart} - ${job.payRangeEnd}` : "No salary mentioned"}
             </h3>
           </div>
+
           <div>
             <div class="flex justify-between text-gray-600 text-base mt-2 max-lg:text-sm">
               <h3 class="text-black">${job.city ? job.city + ", " : ""}${job.country || ""}</h3>
@@ -80,12 +86,12 @@ const card = (jobsCard) => {
               </h3>
             </div>
           </div>
-        </div>`;
+        </div>
+      `;
     })
     .join("");
-
-  currentIndex = 0; // Reset to first card
 };
+
 
 // Fetch API
 api(8);
