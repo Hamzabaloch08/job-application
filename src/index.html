@@ -175,40 +175,41 @@
         </h1>
       </div>
       <!-- Carousel Container -->
-      <!-- Carousel Container -->
-      <div class="flex justify-center items-center relative gap-x-5 overflow-hidden p-5">
-        <!-- Left Button -->
+      <div class="relative w-full overflow-hidden p-6">
+        <!-- Left Arrow -->
         <button id="leftArrow"
-          class="left-arrow flex justify-center items-center bg-[#4f3bffd5] hover:bg-[#1400c9] p-1 text-white rounded-full font-bold text-xl">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="4" stroke="currentColor"
-            class="w-3 h-3">
+          class="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-[#4f3bffd5] hover:bg-[#1400c9] p-2 rounded-full text-white shadow-md">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
           </svg>
         </button>
-
-        <!-- Job Cards Wrapper -->
-        <div id="job-container" class="flex gap-6 w-max px-5 py-6 overflow-x-auto whitespace-nowrap scroll-smooth">
+      
+        <!-- Carousel Container -->
+        <div id="job-container"
+          class="flex overflow-x-auto scroll-smooth gap-6 scrollbar-hide px-4 scroll-snap-x scroll-snap-mandatory">
+          <!-- Cards inserted by JS -->
         </div>
-
-        <!-- Right Button -->
+      
+        <!-- Right Arrow -->
         <button id="rightArrow"
-          class="right-arrow flex items-center bg-[#4f3bffd5] hover:bg-[#1400c9] p-1 text-white rounded-full font-bold text-xl">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="4" stroke="currentColor"
-            class="w-3 h-3">
+          class="absolute right-2 top-1/2 transform -translate-y-1/2 z-10 bg-[#4f3bffd5] hover:bg-[#1400c9] p-2 rounded-full text-white shadow-md">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
           </svg>
         </button>
       </div>
+      
+      <!-- Carousel Container end -->
     </section>
     <!-- Latest And Top Job Openings section End -->
     <!-- The Wall of Love section -->
     <section>
       <div class="text-center m-20">
-        <h1 class="text-[#2a2a2a] text-5xl font-black max-md:text-3xl">
+        <h1 class="text-[#2a2a2a] text-5xl font-black max-md:text-3xl max-sm:text-xl">
           Get Hired In 4
           <span class="text-[#6523ff]">Quick Easy Steps </span>
         </h1>
-        <p class="text-xl font-thin text-[#313131]">The quickest and the most effective way to get hired by the top
+        <p class="text-xl font-thin text-[#313131] max-md:text-lg">The quickest and the most effective way to get hired by the top
           firm.</p>
       </div>
       <div class="flex flex-wrap justify-center gap-6 p-6">
@@ -280,18 +281,27 @@
     <!-- Find Your Dream Job section start -->
     <section>
       <div class="text-center my-32 flex justify-center items-center flex-col">
-        <h1 class="text-[#2a2a2a] text-5xl font-black max-md:text-3xl">
+        <h1 class="text-[#2a2a2a] text-5xl font-black max-md:text-3xl max-sm:text-lg">
           Find Your Dream Job
           <span class="text-[#6523ff]">Super Fast Ever.</span>
         </h1>
-        <p class="text-xl font-thin text-[#313131] w-[65%] m-2">We are here to help jobseekers connect with organizer and companies.
+        <p class="text-xl font-thin text-[#313131] w-[65%] mt-2 max-sm:text-base max-sm:w-[90%]">We are here to help jobseekers connect with organizer
+          and companies.
           We are provides the best opportunities to professional people.</p>
       </div>
-      <div class="flex justify-center items-center mt-[-40px]">
-        <img class="w-[90%]" src="../assets/banner_career-4b7d86fb.webp" alt="banner_career-4b7d86fb">
+      <div class="flex justify-center items-center mt-[-40px] max-sm:mt-[-80px]">
+        <img class="w-[90%] max-md:w-[100%]" src="../assets/banner_career-4b7d86fb.webp" alt="banner_career-4b7d86fb">
       </div>
     </section>
     <!-- Find Your Dream Job section start -->
+     <section>
+      <div class="text-center my-32 flex justify-center items-center flex-col">
+        <h1 class="w-[80%] text-[#2a2a2a] text-5xl font-black max-md:text-3xl max-sm:text-lg">
+          <span class="text-[#6523ff]">Countless Career Options</span>
+          Are Waiting For You To Explore
+        </h1>
+      </div>
+     </section>
   </main>
 
   <script src="navbar.js"></script>
