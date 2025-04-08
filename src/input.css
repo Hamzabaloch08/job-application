@@ -178,7 +178,6 @@ body {
   }
 }
 
-
 /* Hide scrollbar */
 #job-container::-webkit-scrollbar {
   display: none;
@@ -235,4 +234,19 @@ body {
     padding: 10px;
     gap: 10px;
   }
+}
+
+@media (max-width: 425px) {
+  .job-card {
+    flex: 0 0 100%;
+    min-width: 100%;
+    height: auto;
+  }
+}
+
+screens: {
+  sm: '640px',
+  md: '768px',
+  lg: '1024px',
+  xl: '1280px',
 }
