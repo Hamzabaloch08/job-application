@@ -36,3 +36,49 @@ const getTimeAgo = (updatedAt) => {
   const diffInYears = Math.floor(diffInDays / 365);
   return `${diffInYears} years ago`;
 };
+
+const card = (jobsCard) => {
+  console.log(jobsCard);
+
+  cardContainer.innerHTML = jobsCard
+    .map((job) => {
+      const timeAgo = getTimeAgo(job.updatedAt);
+      return `
+          <div class="flex flex-col justify-between bg-white shadow-lg py-6 px-6 rounded-md border border-gray-200 cursor-pointer transition-all ease-linear duration-200 hover:translate-y-[-5px] 
+    w-[562px] min-w-[562px] 
+    lg:w-[48%] lg:min-w-[48%] 
+    md:w-[45%] md:min-w-[45%] 
+    sm:w-[90%] sm:min-w-[90%] 
+    max-sm:w-full max-sm:min-w-full h-[43vh]">
+  
+            
+            <div>
+              <div class="flex justify-between items-center">
+                <h3 class="text-black font-medium text-base max-lg:text-sm">${job.companyName || "Anonymous"}</h3>
+                <img src="../assets/logo.png" alt="Company Logo" class="w-10 h-auto max-lg:w-8" />
+              </div>
+              <h3 class="font-bold text-base text-black mt-1 max-lg:text-sm">${job.designation}</h3>
+              <h3 class="font-bold text-base text-[#4D3BDB] mt-1 max-lg:text-sm">
+                ${job.payRangeStart && job.payRangeEnd ? `RS ${job.payRangeStart} - ${job.payRangeEnd}` : "No salary mentioned"}
+              </h3>
+            </div>
+  
+            <div>
+              <div class="flex justify-between text-gray-600 text-base mt-2 max-lg:text-sm">
+                <h3 class="text-black">${job.city ? job.city + ", " : ""}${job.country || ""}</h3>
+                <h3 class="text-black">${job.views} views</h3>
+              </div>
+              <div class="flex justify-between text-base mt-2 max-lg:text-sm">
+                <h3 class="text-gray-500">${timeAgo}</h3>
+                <h3 class="text-[#3f3f3f] font-bold">
+                  posted by <span class="text-[#4D3BDB] font-medium">${job.user.firstName || "Unknown"}</span>
+                </h3>
+              </div>
+            </div>
+          </div>
+        `;
+    })
+    .join("");
+};
+
+api(10);
