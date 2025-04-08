@@ -1,4 +1,4 @@
-const cardContainer = document.getElementById("job-container");
+const cardContainer = document.getElementById("container");
 
 let api = async (jobLimits = 10) => {
   try {
