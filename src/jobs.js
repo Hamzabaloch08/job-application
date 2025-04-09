@@ -1,4 +1,6 @@
 const cardContainer = document.getElementById("container");
+const dropDown = document.getElementById('dropDown-menu')
+const dropDownBtn = document.getElementById('dropDown-button')
 
 let api = async (jobLimits = 10) => {
   try {
