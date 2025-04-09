@@ -95,3 +95,5 @@ const dropDownMenu = () => {
     dropDown.classList.remove('block')
   }
 }
+
+dropDownBtn.addEventListener('mouseover',dropDownMenu)
