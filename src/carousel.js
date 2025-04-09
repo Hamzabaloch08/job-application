@@ -9,7 +9,6 @@ let api = async (jobLimits = 8) => {
     }
 
     const JSONresponse = await response.json();
-    console.log("call api ====>", JSONresponse);
     card(JSONresponse.data);
   } catch (error) {
     console.error("Error fetching data:", error);
