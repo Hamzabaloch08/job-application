@@ -13,7 +13,7 @@ let api = async (jobLimits = 10) => {
 
     const JSONresponse = await response.json();
     card(JSONresponse.data);
-    console.log("call api ====>", JSONresponse);
+
   } catch (error) {
     console.error("Error fetching data:", error);
   }
@@ -97,3 +97,5 @@ const dropDownMenu = () => {
 }
 
 dropDownBtn.addEventListener('mouseover',dropDownMenu)
+
+api(10);
