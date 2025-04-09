@@ -84,3 +84,14 @@ const card = (jobsCard) => {
 };
 
 api(10);
+
+const dropDownMenu = () => {
+  console.log('clicked')
+  if(dropDown.classList.contains('hidden')){
+    dropDown.classList.remove('hidden')
+    dropDown.classList.add('block')
+  } else {
+    dropDown.classList.add('hidden')
+    dropDown.classList.remove('block')
+  }
+}
