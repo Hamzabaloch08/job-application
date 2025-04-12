@@ -65,16 +65,25 @@
       </nav>
 
       <!-- Drop Down Container -->
-      <div class="flex flex-row justify-between">
-        <div id="dropDown-button">
+
+      <!-- Container for all filters -->
+      <div class="dropDown-container flex flex-wrap justify-center gap-3">
+        <!-- Category Filter -->
+        <div class="dropDown-wrapper relative">
           <div
-            class="bg-[#9747ff] text-[#fff] rounded-full px-7 py-2 text-[14px]"
+            class="dropDown-button bg-[#9747ff] text-white rounded-full px-7 py-2 text-[14px] cursor-pointer"
           >
-            Development
+            Category
           </div>
           <div
-            id="dropDown-menu"
-            class="bg-[#fff] border-gray-100 border-[1px] p-5 mt-3 rounded-sm hidden z-1 absolute"
+            class="dropDown-menu hidden bg-white border border-gray-200 p-5 w-[200px] h-[200px] mt-2 rounded-sm absolute z-10"
+          ></div>
+        </div>
+
+        <!-- Date Posted Filter -->
+        <div class="dropDown-wrapper relative">
+          <div
+            class="dropDown-button bg-[#9747ff] text-white rounded-full px-7 py-2 text-[14px] cursor-pointer"
           >
             <input
               type="checkbox"
