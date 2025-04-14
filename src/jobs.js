@@ -1,9 +1,4 @@
 const cardContainer = document.getElementById("container");
-const dropDownContainer = document.querySelector('.dropDown-container')
-const dropDownWrapper = document.querySelector('.dropDown-wrapper')
-const dropDownMenu = document.querySelector('.dropDown-menu')
-const dropDownBtn = document.querySelector('.dropDown-button')
-
 
 let api = async (jobLimits = 10) => {
   try {
@@ -15,9 +10,7 @@ let api = async (jobLimits = 10) => {
     }
 
     const JSONresponse = await response.json();
-    console.log(JSONresponse.data, 'daataa')
     card(JSONresponse.data);
-    multipleCards(JSONresponse.data)
 
   } catch (error) {
     console.error("Error fetching data:", error);
@@ -86,60 +79,8 @@ const card = (jobsCard) => {
     .join("");
 };
 
-api(1);
 
-const multipleCards = (ele) => {
-  ele.forEach(e => {
-    console.log(e)
-    dropDownMenu.innerHTML += `
-            <input
-              type="checkbox"
-              id="development"
-              name="development"
-              value="development"
-            />
-            <label for="development">Development</label><br />
-            <input
-              type="checkbox"
-              id="marketing"
-              name="marketing"
-              value="marketing"
-            />
-            <label for="marketing">Marketing & Sales</label><br />
-            <input type="checkbox" id="art" name="art" value="art" />
-            <label for="art">Art & Illustration</label><br />
-            <div class="flex flex-row justify-between mt-7">
-              <div
-                class="text-[#4d3bdb] text-[12px] font-bold text-center cursor-pointer mt-1.5"
-              >
-                Clear
-              </div>
-              <div
-                class="bg-[#4d3bdb] rounded-full w-[100px] h-[30px] cursor-pointer align-middle"
-              >
-                <div
-                  class="text-[#fff] text-[12px] font-bold text-center mt-1.5"
-                >
-                  Show Results
-                </div>
-              </div>
-            </div>
-          
-    `
-  });
-}
 
-const dropDown = () => {
-  console.log('clicked')
 
-  if(dropDownMenu.classList.contains('hidden')){
-    dropDownMenu.classList.remove('hidden')
-    dropDownMenu.classList.add('block')
-  } else {
-    dropDownMenu.classList.add('hidden')
-    dropDownMenu.classList.remove('block')
-  }
-}
 
-dropDownBtn.addEventListener('click',dropDown)
 
