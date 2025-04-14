@@ -88,8 +88,28 @@ const card = (jobsCard) => {
     .join("");
 };
 
+api(7);
 
+const dropDownMenuCard = () => {
+  const dropDownWrapper = document.querySelectorAll(".dropDown-wrapper");
 
+  dropDownWrapper.forEach((item) => {
+    const dropDownMenu = item.querySelector(".dropDown-menu");
+    const dropDownBtn = item.querySelector(".dropDown-button");
 
+    dropDownBtn.addEventListener("click", () => {
+      dropDownWrapper.forEach((otherItem) => {
+        const otherMenu = otherItem.querySelector(".dropDown-menu");
+        if (otherItem !== item) {
+          otherMenu.classList.add("hidden");
+          otherMenu.classList.remove("block");
+        }
+      });
+
+      dropDownMenu.classList.toggle("hidden");
+      dropDownMenu.classList.toggle("block");
+    });
+  });
+};
 
 
