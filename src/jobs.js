@@ -117,3 +117,8 @@ const filterDropDown = (data) => {
   console.log(checked, 'check value')
 };
 
+const extractUniqueCategories = (jobs) => {
+  const categories = jobs.map((job) => job.category.name); // Step 1 & 2
+  const uniqueCategories = [...new Set(categories)]; // Step 3 & 4
+  return uniqueCategories;
+};
