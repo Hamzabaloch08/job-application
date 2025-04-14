@@ -112,4 +112,8 @@ const dropDownMenuCard = () => {
   });
 };
 
+const filterDropDown = (data) => {
+  console.log(data, "filter drop down data");
+  console.log(checked, 'check value')
+};
 
