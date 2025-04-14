@@ -1,4 +1,7 @@
 const cardContainer = document.getElementById("container");
+const dropDownContainer = document.querySelector(".dropDown-container");
+const dropDownWrapper = document.querySelectorAll(".dropDown-wrapper");
+const checked = document.querySelectorAll('input[type="checkbox"]:checked');
 
 let api = async (jobLimits = 10) => {
   try {
@@ -11,7 +14,13 @@ let api = async (jobLimits = 10) => {
 
     const JSONresponse = await response.json();
     card(JSONresponse.data);
+    setTimeout(() => {
+      dropDownMenuCard(JSONresponse.data);
+    }, 500);
 
+    const categories = extractUniqueCategories(JSONresponse.data);
+
+    filterDropDown(categories);
   } catch (error) {
     console.error("Error fetching data:", error);
   }
